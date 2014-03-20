@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="android.webkit.WebView.FindListener"/>
+<fullyQualifiedTypeName name="android.webkit.WebView"/>
+<fullyQualifiedTypeName name="com.tjoonz.app.R.string"/>
+<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="android.widget.Button"/>
+<fullyQualifiedTypeName name="com.tjoonz.app.R.id"/>
+<fullyQualifiedTypeName name="com.tjoonz.app.DummySectionFragment"/>
+<fullyQualifiedTypeName name="android.app.Service"/>
+<fullyQualifiedTypeName name="com.tjoonz.app.R.drawable"/>
+<fullyQualifiedTypeName name="android.media.MediaPlayer.OnCompletionListener"/>
+<fullyQualifiedTypeName name="android.media.MediaPlayer.OnPreparedListener"/>
+<fullyQualifiedTypeName name="android.media.MediaPlayer.OnErrorListener"/>
+<fullyQualifiedTypeName name="android.media.MediaPlayer.OnSeekCompleteListener"/>
+<fullyQualifiedTypeName name="android.media.MediaPlayer.OnInfoListener"/>
+<fullyQualifiedTypeName name="android.media.MediaPlayer.OnBufferingUpdateListener"/>
+<fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="android.media.MediaPlayer"/>
+<fullyQualifiedTypeName name="com.tjoonz.app.R.raw"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,90 @@
+package com.tjoonz.app;
+
+import android.app.Service;
+import android.content.Intent;
+import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnBufferingUpdateListener;
+import android.media.MediaPlayer.OnCompletionListener;
+import android.media.MediaPlayer.OnErrorListener;
+import android.media.MediaPlayer.OnInfoListener;
+import android.media.MediaPlayer.OnPreparedListener;
+import android.media.MediaPlayer.OnSeekCompleteListener;
+import android.os.IBinder;
+import android.util.Log;
+
+public class Player extends Service implements OnCompletionListener, OnPreparedListener, OnErrorListener, OnSeekCompleteListener, OnInfoListener, OnBufferingUpdateListener{
+
+	private MediaPlayer mp = new MediaPlayer();
+
+	@Override
+	public void onCreate() {
+
+		mp.setOnCompletionListener(this);
+		mp.setOnErrorListener(this);
+		mp.setOnPreparedListener(this);
+		mp.setOnBufferingUpdateListener(this);
+		mp.setOnSeekCompleteListener(this);
+		mp.setOnInfoListener(this);
+		mp.reset();
+		super.onCreate();
+	}
+
+	@Override
+	public int onStartCommand(Intent intent, int flags, int startId) {
+
+		mp.reset();
+		if(!mp.isPlaying()){
+			try {
+				mp.setDataSource("android.resource://YOURPACKAGE_NAME/raw/octopus");
+				mp.prepareAsync();
+			} catch (Exception e) {
+				Log.d("iduine", "pb sur la lecture");
+				e.printStackTrace();
+			}
+		}
+
+		return START_STICKY;
+	}
+
+	@Override
+	public void onBufferingUpdate(MediaPlayer mp, int percent) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean onInfo(MediaPlayer mp, int what, int extra) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void onSeekComplete(MediaPlayer mp) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean onError(MediaPlayer mp, int what, int extra) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void onPrepared(MediaPlayer mp) {
+
+		playMedia();
+	}
+
+	@Override
+	public void onCompletion(MediaPlayer arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public IBinder onBind(Intent intent) {
+
+		return null;
+	}
+}

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Tjoonz</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_section1">Home</string>
+    <string name="title_section2">Hot</string>
+    <string name="title_section3">Play</string>
+    <string name="text_sample"><h2>Part 1: Reid Speed</h2>
+<ol>
+<li>AlunaGeorge &#8211; You Know U Like It (DJ Snake Remix)</li>
+<li>Vass &#8211; Rowdy Arabia (Victor Niglio Edit)</li>
+<li>Saint &amp; G-Buck &#8211; Gijilbae</li>
+<li>Caked UP &#8211; The Bomb</li>
+<li>UFO &#8211; Culture Vulture</li>
+<li>Them Lost Boys &#8211; Thats My Jam</li>
+<li>Party Favor &#8211; RVCHET Rock Anthem</li>
+<li>Buku &#8211; That Thing</li>
+<li>Chase &amp; Status &#8211; International (Skrillex Remix)</li>
+<li>Gessafelstein &#8211; Hellifornia</li>
+<li>Emalkay &#8211; For The People</li>
+<li>Emperor &#8211; Soundboy</li>
+<li>Mutated Forms &#8211; Wastegash (The Upbeats Remix)</li>
+<li>Flinch &amp; Infuze &#8211; One More Night</li>
+<li>Sub Antix &amp; Diamond Pistols &#8211; Leanin</li>
+<li>Kill The Noise &#8211; Rockers (Bro Safari &amp; UFO Remix)</li>
+<li>Caspa &#8211; No Gyal feat. Rod Azlan</li>
+<li>Sub Antix &#8211; Techniques</li>
+<li>Petey Clicks &#8211; Creature</li>
+<li>Proper Villains &amp; Reid Speed &#8211; We Love The Blunts (Rap Remix feat. Dances With White Girls)</li>
+</ol>
+<h2>Part 2: Annalyze</h2>
+<ol start="21">
+<li>Yellow Claw &#8211; Turn It Up</li>
+<li>Dj Snake feat Lil Jon &#8211; Turn Down For What</li>
+<li>Rock-it Scientist feat Wewurk Ent. &#8211; Twerk Lil Mama</li>
+<li>Dotcom &#8211; Booty Wop</li>
+<li>Riot Ten feat Fatman Scoop &#8211; Get Ya Hands Up</li>
+<li>Ptaf &#8211; Boss Ass Bitch</li>
+<li>Matamonk &amp; Enrie &#8211; Pawg</li>
+<li>Riot ten &#8211; Big Booty</li>
+<li>Jackal &#8211; Bubblegum</li>
+<li>Whiiiite &#8211; The Nola Anthem</li>
+<li>Quickie Mart &#8211; Ass Rotation (Smookie Illson Remix)</li>
+<li>Oh, Lord &#8211; Child&#8217;s Play</li>
+<li>Whiiite &#8211; Monstiiir</li>
+<li>DJ Katch &#8211; Horns</li>
+<li>Major Lazer &#8211; Watch Out For This (Deekline Remix)</li>
+<li>Kronik &amp; Krunk &#8211; Hey Ho</li>
+</ol></string>
+    <string name="desc">test_desc</string>
+
+</resources>
