@@ -1,4 +1,4 @@
-package com.example.tjoonz;
+package maps.example.tjoonz;
 
 public class UserInfo {
 

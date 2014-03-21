@@ -1,4 +1,4 @@
-package com.example.tjoonz;
+package maps.example.tjoonz;
 
 import java.text.DecimalFormat;
 import java.util.HashMap;

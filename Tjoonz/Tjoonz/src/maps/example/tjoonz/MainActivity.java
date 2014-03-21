@@ -1,27 +1,32 @@
-package com.example.tjoonz;
+package maps.example.tjoonz;
+
 import java.util.HashMap;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.tjoonz.app.R;
 
 import android.content.Context;
+import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.widget.Toast;
 
 public class MainActivity extends FragmentActivity implements LocationListener {
 
 	private LocationManager locationManager;
 	private GoogleMap gMap;
 	private ServerStub server;
+
+	//////////-Gestion Accelerometre-//////////
+	SensorManager sensorManager;
+	Capteur accelerometre;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +39,8 @@ public class MainActivity extends FragmentActivity implements LocationListener {
         createMarker();
         
     //////////-Gestion Accelerometre-//////////
-        SensorManager handler = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+		sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+		accelerometre = new Capteur();
     }
     
     public void onResume() {
@@ -47,6 +53,9 @@ public class MainActivity extends FragmentActivity implements LocationListener {
         if(locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             abonnementGPS();
         }
+        
+		//////////-Gestion Accelerometre-//////////
+		sensorManager.registerListener(accelerometre, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER), SensorManager.SENSOR_DELAY_NORMAL);
     }
     
     @Override
@@ -55,6 +64,9 @@ public class MainActivity extends FragmentActivity implements LocationListener {
 
         //On appelle la méthode pour se désabonner
         desabonnementGPS();
+        
+		//////////-Gestion Accelerometre-//////////
+		sensorManager.unregisterListener(accelerometre);
     }
 
     /**
