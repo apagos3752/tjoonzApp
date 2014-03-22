@@ -2,6 +2,7 @@ package com.tjoonz.app;
 
 import java.util.Locale;
 
+import maps.example.tjoonz.MapsFrag;
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
@@ -74,6 +75,9 @@ public class Home extends FragmentActivity implements ActionBar.TabListener{
 			Bundle args = new Bundle();
 			args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, position + 1);
 			fragment.setArguments(args);
+			if(position==0){
+				fragment = new MapsFrag();
+			}
 			return fragment;
 		}
 
