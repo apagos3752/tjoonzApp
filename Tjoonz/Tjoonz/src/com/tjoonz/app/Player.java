@@ -47,7 +47,7 @@ public class Player extends Service implements OnCompletionListener, OnPreparedL
 		mp.reset();
 		if(!mp.isPlaying()){
 			try {
-				mp.setDataSource(this, Uri.parse("android.resource://" + this.getPackageName() + "/" + R.raw.octopus));
+				mp.setDataSource(this, Uri.parse("android.resource://" + this.getPackageName() + "/" + DummySectionFragment.playlist[DummySectionFragment.currentSong]));
 //				mp.setDataSource("http://licensing.glowingpigs.com/Audio/10.mp3");
 				mp.prepareAsync();
 			} catch (Exception e) {

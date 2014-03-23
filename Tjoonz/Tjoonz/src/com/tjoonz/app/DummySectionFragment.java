@@ -15,15 +15,28 @@ public class DummySectionFragment extends Fragment{
 
 		public static final String ARG_SECTION_NUMBER = "section_number";
 		private Button playBtn;
+		private Button nextBtn;
+		private Button stopBtn;
 		private boolean playBtnStatus = false;
+		static int[] playlist;
+		static int currentSong;
+		private int nbsong;
 		Intent player;
 
 		@Override
 		public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-
+			nbsong = 2;
+			playlist = new int[nbsong];
+			playlist[0] = R.raw.octopus;
+			playlist[1] = R.raw.sleepaway;
+			
+			currentSong = 0;
+			
 			View rootView;
 			TextView dummyTextView;
-
+			
+			
+			
 			switch (getArguments().getInt(ARG_SECTION_NUMBER)){
 
 				case 1 :	rootView = inflater.inflate(R.layout.fragment_home_dummy, container, false);
@@ -39,6 +52,8 @@ public class DummySectionFragment extends Fragment{
 				case 3 :	rootView = inflater.inflate(R.layout.fragment_player_dummy, container, false);
 							((WebView)rootView.findViewById(R.id.webView)).loadData(getResources().getString(R.string.text_sample), "text/html", null);
 							playBtn = ((Button)rootView.findViewById(R.id.btn_play));
+							nextBtn = ((Button)rootView.findViewById(R.id.btn_next));
+							stopBtn = ((Button)rootView.findViewById(R.id.btn_stop));
 							playerFragment();
 							break;
 
@@ -56,20 +71,36 @@ public class DummySectionFragment extends Fragment{
 				
 				@Override
 				public void onClick(View v) {
-					if(playBtnStatus)
-						stopMusic();
-					else
 						playMusic();
-					playBtnStatus = !playBtnStatus;
 				}
 			});
+			stopBtn.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+						stopMusic();
+				}
+			});			
+			nextBtn.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					if(currentSong == nbsong-1){
+						currentSong = 0;
+					}else{
+						currentSong++;
+					}
+					stopMusic();
+					playMusic();
+				}
+			});	
 		}
 
 		private void playMusic(){
 
 			playBtn.setBackgroundResource(R.drawable.pause_btn);
 			player.putExtra("audio", "MUST DIE! - Octopus.mp3");
-			this.getActivity().startService(player);
+			this.getActivity().startService(player);	
 		}
 
 		private void stopMusic(){
@@ -77,4 +108,5 @@ public class DummySectionFragment extends Fragment{
 			playBtn.setBackgroundResource(R.drawable.play_btn);
 			this.getActivity().stopService(player);
 		}
+		
 	}
