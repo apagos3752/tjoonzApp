@@ -1,6 +1,5 @@
 package maps.example.tjoonz;
 
-import java.text.DecimalFormat;
 import java.util.HashMap;
 
 public class ServerStub {
