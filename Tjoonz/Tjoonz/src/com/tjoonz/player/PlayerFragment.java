@@ -28,7 +28,7 @@ public class PlayerFragment extends Fragment{
 
 		View rootView;
 
-		rootView = inflater.inflate(R.layout.fragment_player_dummy, container, false);
+		rootView = inflater.inflate(R.layout.fragment_player, container, false);
 		((WebView)rootView.findViewById(R.id.webView)).loadData(getResources().getString(R.string.text_sample), "text/html", null);
 		playBtn = ((Button)rootView.findViewById(R.id.btn_play));
 		nextBtn = ((Button)rootView.findViewById(R.id.btn_next));
@@ -70,7 +70,7 @@ public class PlayerFragment extends Fragment{
 		});	
 	}
 
-	private void playMusic(){
+	public void playMusic(){
 
 		playBtn.setBackgroundResource(R.drawable.pause_btn);
 		player.putExtra("audio", "MUST DIE! - Octopus.mp3");
